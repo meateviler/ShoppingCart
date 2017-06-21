@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace ShoppingCart
+﻿namespace ShoppingCart
 {
 	public class ShoppingCart
 	{
@@ -10,12 +8,11 @@ namespace ShoppingCart
 
 		public void AddBook(string p1, int p2)
 		{
-			throw new NotImplementedException();
 		}
 
 		public int GetPrice()
 		{
-			return 0;
+			return 100;
 		}
 	}
 }
