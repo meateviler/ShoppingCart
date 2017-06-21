@@ -18,7 +18,13 @@ namespace ShoppingCart
 		public int GetPrice()
 		{
 			if (_shoppingProduct.Count == 2)
+			{
 				return (int)(_shoppingProduct.Count * 100 * 0.95);
+			}
+			else if (_shoppingProduct.Count == 3)
+			{
+				return (int)(_shoppingProduct.Count * 100 * 0.9);
+			}
 			return 100;
 		}
 	}
