@@ -21,6 +21,7 @@ namespace ShoppingCart.Tests
 		[TestCase(new[] { 1, 1, 1, 1, 0 }, ExpectedResult = 320, TestName = "BuyFourDifferentBookShouldBe320")]
 		[TestCase(new[] { 1, 1, 1, 1, 1 }, ExpectedResult = 375, TestName = "BuyFiveDifferentBookShouldBe375")]
 		[TestCase(new[] { 1, 1, 2, 0, 0 }, ExpectedResult = 370, TestName = "BuyThreeDifferentBookAndOneSameShouldBe370")]
+		[TestCase(new[] { 1, 2, 2, 0, 0 }, ExpectedResult = 460, TestName = "BuyThreeDifferentBookAndAddTwoSameBookShouldBe460")]
 		public int ShoppingCartTest(int[] bookArray)
 		{
 			var target = new ShoppingCart();
