@@ -25,6 +25,10 @@ namespace ShoppingCart
 			{
 				return (int)(_shoppingProduct.Count * 100 * 0.9);
 			}
+			else if (_shoppingProduct.Count == 4)
+			{
+				return (int)(_shoppingProduct.Count * 100 * 0.8);
+			}
 			return 100;
 		}
 	}
