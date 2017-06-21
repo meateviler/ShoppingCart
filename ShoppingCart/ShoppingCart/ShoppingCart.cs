@@ -6,6 +6,15 @@ namespace ShoppingCart
 	{
 		private Dictionary<string, int> _shoppingProduct = new Dictionary<string, int>();
 
+		private Dictionary<int, decimal> _discount = new Dictionary<int, decimal>()
+		{
+			{1,1.0m},
+			{2,0.95m},
+			{3,0.9m},
+			{4,0.8m},
+			{5,0.75m},
+		};
+
 		public ShoppingCart()
 		{
 		}
@@ -21,26 +30,7 @@ namespace ShoppingCart
 			int productCount = GetProductCount();
 			while (productCount > 0)
 			{
-				if (productCount == 2)
-				{
-					totalPrice += (int)(productCount * 100 * 0.95);
-				}
-				else if (productCount == 3)
-				{
-					totalPrice +=  (int)(productCount * 100 * 0.9);
-				}
-				else if (productCount == 4)
-				{
-					totalPrice +=  (int)(productCount * 100 * 0.8);
-				}
-				else if (productCount == 5)
-				{
-					totalPrice += (int)(productCount * 100 * 0.75);
-				}
-				else
-				{
-					totalPrice += 100;
-				}
+				totalPrice += (int)(productCount * 100 * _discount[productCount]);
 				RemoveEveryProductOnce();
 				productCount = GetProductCount();
 			}
